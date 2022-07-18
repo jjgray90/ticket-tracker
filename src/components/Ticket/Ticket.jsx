@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Ticket.scss";
+import "./Ticket.scss";
 import Counter from "../Counter/Counter";
 
 const Ticket = () => {

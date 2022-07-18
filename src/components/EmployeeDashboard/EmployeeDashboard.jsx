@@ -1,6 +1,6 @@
 import React from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
-import styles from "./EmployeeDashboard.scss";
+import "./EmployeeDashboard.scss";
 
 const EmployeeDashboard = ({ team }) => {
   const teamCardsJSX = team.map((employee) => (
