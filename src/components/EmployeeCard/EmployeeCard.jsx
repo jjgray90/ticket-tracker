@@ -6,8 +6,14 @@ const EmployeeCard = ({ name, role }) => {
     <>
       <section className="card">
         <div className="card__employee">
-          <p className="employee__name">Name: {name}</p>
-          <p className="employee__role">Role: {role}</p>
+          <div className="employee">
+            <p className="employee__label">Name</p>
+            <p className="employee__content">{name}</p>
+          </div>
+          <div className="employee">
+            <p className="employee__label">Role</p>
+            <p className="employee__content">{role}</p>
+          </div>
         </div>
         <Ticket />
       </section>
