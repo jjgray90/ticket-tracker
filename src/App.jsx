@@ -1,18 +1,13 @@
 import "./App.scss";
-import EmployeeCard from "./components/EmployeeCard/EmployeeCard";
+import EmployeeDashboard from "./components/EmployeeDashboard/EmployeeDashboard";
 import team from "./data/team.js";
-
-const teamCardsJSX = team.map((employee) => (
-  <EmployeeCard name={employee.name} role={employee.role} key={employee.id} />
-));
 
 function App() {
   return (
-    <>
+    <section className="app-container">
       <h1>Ticket Tracker</h1>
-      
-      {teamCardsJSX}
-    </>
+      <EmployeeDashboard team={team} />
+    </section>
   );
 }
 
