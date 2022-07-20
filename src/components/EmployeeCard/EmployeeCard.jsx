@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./EmployeeCard.scss";
 import Ticket from "../Ticket/Ticket";
 
@@ -9,22 +9,25 @@ const EmployeeCard = ({ name, role }) => {
   const changeCount = (symbol) => {
     if (symbol === "+") {
       setCount(count + 1);
-      checkCount(count + 1);
     } else if (symbol === "-" && count > 0) {
       setCount(count - 1);
-      checkCount(count - 1);
     } else return count === 0;
   };
 
-  const checkCount = (tickets) => {
-    if (tickets < 3) {
+  const checkCount = () => {
+    if (count < 3) {
       setModifier("");
-    } else if (tickets < 6) {
+    } else if (count < 6) {
       setModifier("warning");
     } else {
       setModifier("alert");
     }
   };
+
+  useEffect(() => {
+    console.log("h");
+    checkCount();
+  }, [count]);
 
   return (
     <>
