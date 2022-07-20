@@ -25,7 +25,6 @@ const EmployeeCard = ({ name, role }) => {
   };
 
   useEffect(() => {
-    console.log("h");
     checkCount();
   }, [count]);
 
