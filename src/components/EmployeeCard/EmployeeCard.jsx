@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./EmployeeCard.scss";
 import Ticket from "../Ticket/Ticket";
 
@@ -14,7 +14,7 @@ const EmployeeCard = ({ name, role }) => {
     } else return count === 0;
   };
 
-  const checkCount = () => {
+  const checkCount = useCallback(() => {
     if (count < 3) {
       setModifier("");
     } else if (count < 6) {
@@ -22,11 +22,11 @@ const EmployeeCard = ({ name, role }) => {
     } else {
       setModifier("alert");
     }
-  };
+  }, [count]);
 
   useEffect(() => {
     checkCount();
-  }, [count]);
+  }, [checkCount]);
 
   return (
     <>
