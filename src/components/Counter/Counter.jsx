@@ -1,17 +1,6 @@
-import React, { useState } from "react";
 import "./Counter.scss";
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  const changeCount = (symbol) => {
-    if (symbol === "+") {
-      setCount(count + 1);
-    } else if (symbol === "-" && count > 0) {
-      setCount(count - 1);
-    } else return count === 0;
-  };
-
+const Counter = ({ count, changeCount }) => {
   return (
     <div className="counter">
       <p className="counter__minus" onClick={() => changeCount("-")}>
