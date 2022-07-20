@@ -1,12 +1,29 @@
+@use "../../assets/sass/variables" as *;
+
 .counter {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  transform: rotate(2deg);
+
+  * > & {
+    text-shadow: 0.5px 0.5px 0.5px black;
+    font-family: $heading-primary;
+  }
+
+  &__number {
+    font-size: 5rem;
+  }
 
   &__minus,
   &__plus {
+    font-size: 2rem;
     cursor: pointer;
+
+    &:hover {
+      color: lightblue;
+    }
   }
 }
